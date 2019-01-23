@@ -25,7 +25,21 @@ public class MainController {
 	public String homePost(AccountVo loginInfo, Model model) {
 		AccountVo user = accountService.signin(loginInfo);
 		model.addAttribute("user", user);
-		return "home";
+		return "redirect:/";
+	}
+	
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	public String signupGet() {
+		
+		return "signup";
+	}
+	
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	public String signupPost(AccountVo userInfo, Model model) {
+		boolean isUser = accountService.signup(userInfo);
+		if (isUser) {
+			return "redirect:/";
+		} else return "redirect:/signup";
 	}
 	
 }
