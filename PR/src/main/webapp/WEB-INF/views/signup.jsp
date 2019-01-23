@@ -10,7 +10,7 @@
 	.backward {
 		position: absolute;
 		top: 531px;
-		left: 180px;
+		left: 280px;
 	}
 </style>
 <body>
@@ -49,7 +49,10 @@
 			</div>
 			<hr>
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary col-sm-1">확인</button>
+				<button id="submit" type="submit" class="btn btn-primary col-sm-2">확인</button>
+			</div>
+			<div class="form-group">
+				<button id="dup" type="button" class="btn btn-danger col-sm-2">ID 중복체크</button>
 			</div>
 		</form>
 		<div class="backward">
@@ -58,5 +61,43 @@
 			</a>
 		</div>
 	</div>
+	<script>
+		var dup = 0;
+		console.log(dup);
+		
+		$("#dup").on("click",function(){
+			var id = "";
+			id = $("#id").val();
+			$.ajax({
+				async:true,
+				type:'POST',
+				data:id,
+				url:"/springpr/signup/dup",
+				dataType:"json",
+				contentType:"application/json; charset=UTF-8",
+				success : function(data){
+					if(data.dup){
+						dup = 1;
+						alert('이미 사용중인 아이디입니다');
+					} else {
+						dup = -1;
+						alert('사용 가능한 아이디입니다');
+					}
+				}
+			});
+		});
+		
+		$("#submit").click(function(){
+			if (dup == 0){
+				alert('ID 중복체크를 하세요!');
+				return false;
+			}
+			if (dup == 1){
+				alert('중복된 아이디입니다!');
+				return false;
+			}
+			return true
+		});
+	</script>
 </body>
 </html>
