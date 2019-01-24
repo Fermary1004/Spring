@@ -10,12 +10,12 @@
 	.backward {
 		position: absolute;
 		top: 531px;
-		left: 280px;
+		left: 300px;
 	}
 </style>
 <body>
 	<div class="jumbotron">
-	  <h1>회 원 가 입</h1>  
+	  <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회 원 가 입</h1>  
 	</div>
 	<div class="container">	
 		<form action="<%= request.getContextPath() %>/signup" method="post" id="signup">

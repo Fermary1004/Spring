@@ -19,7 +19,9 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 		// 가 되는게 맞지만 여기서는 어짜피 정보가 있는지 여부만 체크하므로 굳이 형변환을 하지 않아도 된다
 		if(user == null) {
 			response.sendRedirect(request.getContextPath()+"/");
+			return false;
+		} else {
+			return true;
 		}
-		return true;
 	}
 }

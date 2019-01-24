@@ -4,12 +4,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.green.springpr.dao.BoardDao">
 	<select id="getBoards" resultType="kr.green.springpr.vo.BoardVo">
-		select * from board order by id desc
+		select * from board where state = "on" order by id desc
 	</select>
 	<select id="getDetail" resultType="kr.green.springpr.vo.BoardVo">
-		select * from board where id = ${id} 
+		select * from board where id = ${id} and state = "on"
 	</select>
 	<insert id="setBoard">
 		insert into board (title, content, writer) values (#{board.title}, #{board.content}, #{board.writer})
 	</insert>
+	<update id="updateBoard">
+		update board set title = #{board.title}, content = #{board.content}, state = #{board.state} where id = #{board.id}
+	</update>
 </mapper>

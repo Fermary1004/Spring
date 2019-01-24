@@ -22,7 +22,7 @@
 </head>
 <body>
 	<div class="jumbotron">
-	  <h1>${user.id}님 환영합니다! 이곳은 임시 보드입니다!</h1>  
+	  <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${user.id}<c:if test="${user.id == null}">방문자</c:if>님 환영합니다! 이곳은 임시 보드입니다!</h1>  
   </div>
 	<div class="container">
 		<table class="table table-striped table-hover">

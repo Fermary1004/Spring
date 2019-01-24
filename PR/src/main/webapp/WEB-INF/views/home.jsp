@@ -11,13 +11,18 @@
 	.signupbtn {
 		position: absolute;
 		top: 405px;
-		left: 180px;
+		left: 220px;
+	}
+	.bbsbtn {
+		position: absolute;
+		top: 405px;
+		left: 320px;
 	}
 </style>
 </head>
 <body>
 	<div class="jumbotron">
-	  <h1>Hellooo Hellooo Heeello</h1>  
+	  <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hellooo Hellooo Heeello</h1>  
 	</div>
 	<div class="container">
 		<form action="<%= request.getContextPath() %>/" method="post">
@@ -40,7 +45,12 @@
 		</form>
 		<div class="signupbtn">
 			<a href="<%= request.getContextPath() %>/signup">
-				<button type="button" class="btn btn-secondary">회원가입</button>
+				<button type="button" class="btn btn-danger">회원가입</button>
+			</a>
+		</div>
+		<div class="bbsbtn">
+			<a href="<%= request.getContextPath() %>/bbs/list">
+				<button type="button" class="btn btn-secondary">비회원 둘러보기</button>
 			</a>
 		</div>
 	</div>

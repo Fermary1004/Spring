@@ -29,8 +29,12 @@ public class MainController {
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String homePost(AccountVo loginInfo, Model model) {
 		AccountVo user = accountService.signin(loginInfo);
-		model.addAttribute("user", user);
-		return "redirect:/bbs/list";
+		if (user == null) {
+			return "redirect:/signup";
+		} else {
+			model.addAttribute("user", user);
+			return "redirect:/bbs/list";
+		}
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
