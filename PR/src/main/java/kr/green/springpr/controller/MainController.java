@@ -30,7 +30,7 @@ public class MainController {
 	public String homePost(AccountVo loginInfo, Model model) {
 		AccountVo user = accountService.signin(loginInfo);
 		model.addAttribute("user", user);
-		return "redirect:/";
+		return "redirect:/bbs/list";
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)

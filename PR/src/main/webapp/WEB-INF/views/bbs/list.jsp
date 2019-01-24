@@ -21,7 +21,10 @@
 </style>
 </head>
 <body>
-	${user.id}님 환영합니다! 이곳은 임시 보드입니다
+	<div class="jumbotron">
+	  <h1>${user.id}님 환영합니다! 이곳은 임시 보드입니다!</h1>  
+  </div>
+	<div class="container">
 		<table class="table table-striped table-hover">
 	    <thead>
 	      <tr>
@@ -42,15 +45,13 @@
 	      </c:forEach>
 	    </tbody>
 	  </table>
-	<hr>
-	<br>
-	<a href="<%= request.getContextPath() %>/bbs/write">
-		글쓰기
-	</a>
-<div>
-	<a href="<%= request.getContextPath() %>/">
-		<button type="button">Login</button>
-	</a>
-</div>
+		<hr>
+		<br>
+		<div>
+			<a href="<%= request.getContextPath() %>/bbs/register">
+				<button class="btn btn-primary">글쓰기</button>
+			</a>
+		</div>
+	</div>
 </body>
 </html>

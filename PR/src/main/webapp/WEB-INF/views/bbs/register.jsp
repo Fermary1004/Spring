@@ -12,7 +12,7 @@
 		<div class="jumbotron">
 	  	<h1>게시글 등록</h1>  
 	  </div>
-		<form action="<%= request.getContextPath()%>/bbs/write" method="post">
+		<form action="<%= request.getContextPath()%>/bbs/register" method="post">
 			<div class="form-group">
 			  <label for="title">제목 :</label>
 			  <input type="text" class="form-control col-6" id="title" name="title">
