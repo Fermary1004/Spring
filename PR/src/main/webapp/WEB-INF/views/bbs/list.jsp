@@ -49,8 +49,9 @@
 		<br>
 		<div>
 			<a href="<%= request.getContextPath() %>/bbs/register">
-				<button class="btn btn-primary">글쓰기</button>
-			</a>
+				<button class="btn btn-primary col-sm-2">글쓰기</button></a>
+			<a href="<%= request.getContextPath() %>/signout">
+				<button class="btn btn-secondary">로그아웃</button></a>
 		</div>
 	</div>
 </body>

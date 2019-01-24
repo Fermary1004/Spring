@@ -11,12 +11,12 @@
 	.signupbtn {
 		position: absolute;
 		top: 405px;
-		left: 220px;
+		left: 300px;
 	}
 	.bbsbtn {
 		position: absolute;
 		top: 405px;
-		left: 320px;
+		left: 400px;
 	}
 </style>
 </head>
@@ -40,7 +40,7 @@
 			</div>
 			<hr>
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary col-sm-1">로그인</button>
+				<button type="submit" class="btn btn-primary col-sm-2">로그인</button>
 			</div>
 		</form>
 		<div class="signupbtn">

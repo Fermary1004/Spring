@@ -3,6 +3,9 @@ package kr.green.springpr.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +25,6 @@ public class MainController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homeGet() {
-		
 		return "home";
 	}
 	
@@ -37,9 +39,15 @@ public class MainController {
 		}
 	}
 	
+	@RequestMapping(value = "/signout")
+	public String signout(HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("user");
+		return "redirect:/";
+	}
+	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signupGet() {
-		
 		return "signup";
 	}
 	

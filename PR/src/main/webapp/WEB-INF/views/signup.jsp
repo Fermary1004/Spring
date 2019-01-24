@@ -49,7 +49,7 @@
 			</div>
 			<hr>
 			<div class="form-group">
-				<button id="submit" type="submit" class="btn btn-primary col-sm-2">확인</button>
+				<button id="submit" type="submit" class="btn btn-success col-sm-2">확인</button>
 			</div>
 			<div class="form-group">
 				<button id="dup" type="button" class="btn btn-danger col-sm-2">ID 중복체크</button>
