@@ -24,6 +24,17 @@ public class BoardController {
 		return "bbs/list";
 	}
 	
+	@RequestMapping(value = "/bbs/detail", method=RequestMethod.GET)
+	public String detailGET(Integer id, Model model) {
+		BoardVo detail = boardService.getDetail(id);
+		if(detail == null) {
+			return "bbs/list";
+		} else {
+			model.addAttribute("detail", detail);
+			return "bbs/detail";
+		}
+	}	
+	
 	@RequestMapping(value = "/bbs/register", method=RequestMethod.GET)
 	public String registerGET(BoardVo boardVo) {
 		return "bbs/register";

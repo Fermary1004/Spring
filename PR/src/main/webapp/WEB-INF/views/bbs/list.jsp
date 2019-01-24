@@ -39,7 +39,7 @@
 				<!-- forEach var : 불러온 오브젝트를 어떻게 명명할지 정해주는 부분 -->
 	      <tr>
 	        <td>${board.id}</td>
-					<td>${board.title}</td>
+					<td><a href="<%= request.getContextPath() %>/bbs/detail?id=${board.id}">${board.title}</a></td>
 					<td>${board.writer}</td>
 	      </tr>
 	      </c:forEach>

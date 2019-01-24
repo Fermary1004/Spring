@@ -22,7 +22,12 @@ public class BoardServiceImp implements BoardService {
 	@Override
 	public void registerBoard(BoardVo boardVo) {
 		boardDao.setBoard(boardVo);
-		
+	}
+
+	@Override
+	public BoardVo getDetail(Integer id) {
+		BoardVo detail = boardDao.getDetail(id); 
+		return detail;
 	}
 
 }
