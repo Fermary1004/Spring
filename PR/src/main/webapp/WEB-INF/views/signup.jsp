@@ -63,17 +63,23 @@
 	</div>
 	<script>
 		var dup = 0;
-		console.log(dup);
 		
 		$("#dup").on("click",function(){
 			var id = "";
 			id = $("#id").val();
 			$.ajax({
 				async:true,
+				// 동기화 여부를 결정
 				type:'POST',
+				// 전송 메소드, 컨트롤러의 받는 메소드와 맞춘다
 				data:id,
+				// 어떤 데이타를 보낼 껀지 결정
+				// form의 name을 말함
+				// 여러개의 값을 보낼때는 배열이나 오브젝트로 보낸다
 				url:"/springpr/signup/dup",
+				// 첫 구분자에 /를 넣으면 처음부터, /을 넣지 않으면 현제 페이지 기준
 				dataType:"json",
+				// 보낼 데이터의 타입, json을 사용하기 위해서 pom.xml에 의존성을 추가한다
 				contentType:"application/json; charset=UTF-8",
 				success : function(data){
 					if(data.dup){
@@ -84,6 +90,10 @@
 						alert('사용 가능한 아이디입니다');
 					}
 				}
+				//,
+				//error : function(jqXHR, textStatus, errorThrown){
+				//	여기에 넣으면 실패시 구현될게 나온다
+				//}
 			});
 		});
 		
